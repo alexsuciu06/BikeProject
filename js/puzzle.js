@@ -51,17 +51,25 @@ function renderPart(image) {
 		draggable: true,
 		layer: true,
 		bringToFront: true,
-		click: function(layer) { 
-			console.log(layer);
-			handlePartClick(layer);
+		click: function(layer) {
+			if ( layer.data["class"] && layer.data["class"] != ""  ) {
+				console.log("hasClass");
+				layer.data["class"] = "";
+				return false;
+			} else {
+				console.log("hasnt got claass");
+				handlePartClick(layer);
+			}
 			},
-		mousedown: function(layer) {
-			console.log("mousedown" + layer);
+		dragstop: function (layer) { 			
+			layer.data["class"] = "noclick"; 
+			console.log(layer);
+			console.log("DROP"); 
 			},
 		mouseup: function(layer) {
-			console.log("mouseup" + layer);
+			console.log("mousedown");
 			checkSolution(layer);
-			return false;
+			//return false;
 			}
 	});
 }	
@@ -117,7 +125,7 @@ function isPlacedRight(layer) {
 		dx = Math.abs(layer.x - sol.x),
 		dy = Math.abs(layer.y - sol.y);
 		
-	return (dx < 10 && dy < 10);
+	return (dx < 15 && dy < 15);
 	
 }
 
