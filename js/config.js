@@ -70,5 +70,11 @@ var solutions = {
 				
 			
 var sounds = {
-	ghidon: "./static/mp3/ghidon.m4a"
+	ghidon: "./static/mp3/ghidonul.mp3",
+	ax_jos: "./static/mp3/cadrul.mp3",
+	cadru: "./static/mp3/cadrul.mp3",
+	pedala: "./static/mp3/pedalier.mp3",
+	sezut: "./static/mp3/saua.mp3",
+	front_tyre: "./static/mp3/roataFata.mp3",
+	roata_spate: "./static/mp3/roataSpate.mp3",
 };

@@ -1,5 +1,7 @@
 <html>
 	<head>
+		<title>Puzzle</title>
+		<meta charset="UTF-8">
 		<script src="./js/includes/jquery-3.2.1.min.js"></script>
 		<script src="./js/includes/jcanvas.min.js"> </script>
 		<script src="./js/includes/jquery.playSound.js"></script>
@@ -7,16 +9,29 @@
 	</head>
 	
 	<body>
+		
 		<div id="content">
 			<canvas id="canvas" width="1300" height="800"></canvas>
 		</div>
+		
+		<a href="./index.html">
+			<img id="home_link" src="./static/home_button.png" />
+		</a>
 
+		<a href="./puzzle.html">
+			<img id="reload_link" src="./static/reload.png" />
+		</a>
+		
 		<script src="./js/config.js"></script>
 		<script src="./js/puzzle.js"></script>
-		<script>
-			drawTemplateBike();
-			drawParts()
-		</script>
+		<script> window.onload = function() {drawTemplateBike(); drawParts()} </script>
+		
+		
+		<a href="javascript:void(0)">
+			<img onclick="sound_click()" id="sound_widget" src="./static/with_sound.png" />
+		</a>
+		
+
 	</body>
 	
 </html>

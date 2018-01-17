@@ -7,7 +7,17 @@
 
 var canvas = document.getElementById('canvas'),
 	running = false,
-	placedRight = [];
+	placedRight = [],
+	muted = false;
+	
+function sound_click() {
+	var src = (muted) ? "./static/with_sound.png" : "./static/muted.png";
+	$('#sound_widget').prop("src", src);
+	muted = !muted;
+	$('audio').each(function(){
+		this.muted = muted;
+	});
+}
 	
 function drawTemplateBike() {
 	var img = new Image();
@@ -96,7 +106,8 @@ function handlePartClick(layer) {
 		running = false;
 		return false;
 	}
-	_playSound(name);
+	if (!muted)
+		_playSound(name);
 	return false;
 }
 
@@ -145,13 +156,15 @@ function randomCongratsGIF() {
 function showCongrats() {
 	var congratsImg = randomCongratsGIF();
 	$('#content').html(
-		"<div id=\"congrats_heder\">FELICITARI!!!</div>"
+		"<div id=\"congrats_heder\">FELICITĂRI !!!</div>"
 	  +	"<img id=\"congrats_gif\" src=" + congratsImg + " />"
 		);
 }
 
 function _playSound(name) {
-	
+	console.log(muted);
+	if (muted) return;
+
 	if (sounds[name]) {
 		running = true;
 		$.playSound(sounds[name])

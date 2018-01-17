@@ -1,5 +1,14 @@
 body {
 	margin: 0;
+	/*overflow: hidden;*/
+}
+
+#sound_widget {
+	width: 101px;
+    height: 90px;
+    position: absolute;
+    top: 405px;
+    left: 90px;
 }
 
 #content {
@@ -13,10 +22,78 @@ body {
 
 #canvas {
 	border: solid black 1px;
-	background: papayawhip
+	background: papayawhip;
+	margin-top: 70px;
 }
 img {
 	width: 60%;
 	height: 60%;
+}
+
+#congrats_heder {
+	margin-top: 40px;
+    padding-bottom: 20px;
+    font-family: fantasy;
+    font-size: -webkit-xxx-large;
+    text-shadow: 3px 3px red;
+    color: ivory;
+}
+
+#home_link {
+	max-width: 101px;
+	max-height: 101px;
+	position: absolute;
+	top: 100px;
+	left: 80px;
+}
+
+#reload_link {
+	position: absolute;
+    max-width: 101;
+    max-height: 101;
+    top: 250;
+    left: 80px;
+}
+
+#btns_container {
+	margin-top: 600px;
+}
+
+#hist_home {
+	position: absolute;
+    margin-left: 35%;
+    width: 10%;
+    text-align: center;
+    background-color: lightblue;
+    border-radius: 10px;
+    border: solid darkcyan;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    top: 500px;
+}
+
+#puzzle_home {
+	position: absolute;
+    left: 50%;
+    width: 10%;
+    text-align: center;
+    background-color: lightblue;
+    border-radius: 10px;
+    border: solid darkcyan;
+    padding-bottom: 10px;
+    vertical-align: middle;
+    top: 500px;
+}
+
+.b_icon {
+	width: 100px;
+    height: 100px;
+    vertical-align: middle;
+}
+
+.homebtn_text {
+	text-shadow: 1px 1px darkcyan;
+    font-size: 30px;
+    font-family: fantasy;
 }
 
